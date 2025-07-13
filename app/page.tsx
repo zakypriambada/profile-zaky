@@ -52,7 +52,7 @@ export default function Home() {
               </div>
 
               {/* PROFILE CARD */}
-              <div className="md:col-span-6 order-1 md:order-2 flex justify-center">
+              <div className="md:col-span-6 order-1 md:order-2 flex justify-center fade-in">
                 <ProfileCard
                   name="Jecky"
                   title="Front End Web Developer"
