@@ -1,10 +1,10 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
-import Lanyard from '@/app/components/Lanyard/Lanyard';
 import Footer from "./components/footer";
 import Carousel from "./components/carousel";
 import SkillMarquee from "./components/skillmarque";
+import ProfileCard from './components/ProfileCard/ProfileCard'
 
 export default function Home() {
   const navItems = ["Home", "Portofolio", "Contact"];
@@ -17,25 +17,31 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar items={navItems} />
-      <section id="hero" className="pt-[50px] pr-12 pl-12">
-        <div className="min-h-screen overflow-x-hidden">
-          <div className="container mx-auto min-h-screen">
-            <div className="grid grid-cols-1 md:grid-cols-12">
-              <div className="order-1 md:order-2 md:col-span-6">
-                <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
-              </div>
-              <div className="order-2 md:order-1 md:col-span-6 flex items-center justify-center">
+      <section id="hero" className="pt-[70px] md:pt-[30px] px-6 md:px-12">
+        <div className="min-h-screen overflow-x-hidden flex items-center py-[60px]">
+          <div className="container mx-auto w-full">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+
+              {/* TEXT / BIO */}
+              <div className="md:col-span-6 order-2 md:order-1">
                 <div className={isVisible ? "fade-in" : ""}>
-                  <p className="text-[20px]">Hallo</p>
-                  <h1 className="text-[35px] font-bold">I'm Muhamad Zaky Priambada Anugrah</h1>
-                  <p className="text-[16px]">
+                  <p className="text-[25px]">Hallo</p>
+                  <h1 className="text-[35px] font-bold leading-tight">
+                    I'm Muhamad Zaky Priambada Anugrah
+                  </h1>
+                  <p className="text-[16px] mt-2 text-justify">
                     Saya adalah seorang pengembang web yang penuh semangat, dengan minat di bidang pengembangan front-end maupun back-end. Saya memiliki pengalaman dalam membangun aplikasi dari tahap perencanaan hingga penerapan dan selalu bersemangat untuk mempelajari alat dan teknologi baru. Saya bekerja dengan baik dalam tim, memiliki kemampuan komunikasi yang jelas, dan senang menyelesaikan masalah dengan pendekatan kreatif. Baik bekerja secara mandiri maupun dalam tim, saya fokus untuk menghasilkan hasil yang ramah pengguna dan berkualitas tinggi tepat waktu. Saya berkomitmen untuk tetap terorganisir, mudah beradaptasi, dan terus meningkatkan keterampilan saya untuk berkontribusi pada proyek-proyek yang berdampak.
                   </p>
-                  <div className="mt-4 pt-[10px]">
-                    <a href="/contact" className="bg-black text-white px-8 rounded-[30px] hover:bg-gray-600 transition duration-300 py-4 cursor-pointer">
+
+                  <div className="mt-2">
+                    <a
+                      href="/contact"
+                      className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-600 transition duration-300 inline-block"
+                    >
                       Contact Me!
                     </a>
-                    <div className="mt-2 flex items-center justify-start space-x-3 pt-[20px]">
+
+                    <div className="mt-3 flex gap-2">
                       <img src="/assets/logo-linkedin.svg" width="30" alt="LinkedIn" className="filter brightness-0" />
                       <img src="/assets/logo-instagram.svg" width="30" alt="Instagram" className="filter brightness-0" />
                       <img src="/assets/logo-github.svg" width="30" alt="GitHub" className="filter brightness-0" />
@@ -44,10 +50,28 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              {/* PROFILE CARD */}
+              <div className="md:col-span-6 order-1 md:order-2 flex justify-center">
+                <ProfileCard
+                  name="Jecky"
+                  title="Front End Web Developer"
+                  handle="javicodes"
+                  status="Online"
+                  contactText="Contact Me"
+                  avatarUrl="/assets/profil.png"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  onContactClick={() => console.log('Contact clicked')}
+                />
+              </div>
+
             </div>
           </div>
         </div>
       </section>
+
+
       <section className="py-10 fade-in">
         <div className="text-center">
           <h1 className="text-[39px] font-bold">Skills</h1>
