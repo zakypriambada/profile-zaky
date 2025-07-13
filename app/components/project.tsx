@@ -40,7 +40,7 @@ const projects = [
         description: "...",
         mediaType: "image",
         mediaUrl: "/assets/porto/porto5.png",
-        link: "#",
+        link: "https://github.com/zakypriambada/final-project-pbo",
         technologies: ["Java", "Java Swing", "GUI", "MySQL"],
     },
     {
