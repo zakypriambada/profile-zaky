@@ -91,7 +91,7 @@ const certificates = [
         description: "Mengikuti serangkaian kegiatan Pengkaderan Program Studi Informatika tahun 2023 yang diselenggarakan oleh Himatif UPN “Veteran” Jawa Timur sebagai bagian dari proses pembinaan dan penguatan karakter mahasiswa.",
         mediaType: "image",
         mediaUrl: "/assets/sertif/pengkaderan.jpeg",
-        technologies: ["Game Dev", "Challenge"],
+        technologies: ["Participants"],
     },
 ];
 export default function Sertifikat() {
