@@ -148,7 +148,7 @@ export default function Contact() {
                         <div className="text-center">
                             <button
                                 type="submit"
-                                className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-600 transition duration-300"
+                                className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-600 transition duration-300 cursor-pointer"
                             >
                                 Kirim Pesan
                             </button>

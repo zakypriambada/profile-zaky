@@ -37,7 +37,7 @@ const projects = [
     },
     {
         title: "Pengembangan Sistem Point of Sale berbasis Java Desktop",
-        description: "...",
+        description: "Aplikasi Kasir TOSERBA Berkah Abadi adalah sistem POS berbasis desktop yang dibuat dari studi kasus Toko Berkah Abadi di Jombang. Aplikasi ini memudahkan pencatatan penjualan, manajemen stok, utang-piutang, serta laporan keuangan harian. Dilengkapi fitur login untuk admin dan user, scan barcode untuk input barang, serta notifikasi otomatis, aplikasi ini dirancang dengan tampilan sederhana dan mudah digunakan agar proses operasional toko lebih efisien dan terkontrol.",
         mediaType: "image",
         mediaUrl: "/assets/porto/porto5.png",
         link: "https://github.com/zakypriambada/final-project-pbo",

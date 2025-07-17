@@ -77,7 +77,7 @@ const Home = () => {
                     <div className="absolute top-1/2 left-0 transform -translate-y-1/2 px-4">
                         <button
                             onClick={prevProject}
-                            className="bg-black text-white p-2 rounded-full shadow-md hover:bg-gray-600"
+                            className="bg-black text-white p-2 rounded-full shadow-md hover:bg-gray-600 cursor-pointer"
                         >
                             &#10094;
                         </button>
@@ -85,7 +85,7 @@ const Home = () => {
                     <div className="absolute top-1/2 right-0 transform -translate-y-1/2 px-4">
                         <button
                             onClick={nextProject}
-                            className="bg-black text-white p-2 rounded-full shadow-md hover:bg-gray-600"
+                            className="bg-black text-white p-2 rounded-full shadow-md hover:bg-gray-600 cursor-pointer"
                         >
                             &#10095;
                         </button>
