@@ -55,7 +55,7 @@ const Home = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen pb-[100px] fade-in">
-            <section id="carousel-section" className="w-full max-w-4xl flex flex-col items-center">
+            <section id="carousel-section" className="w-full max-w-4xl flex flex-col items-center pt-[50px]">
                 <div className="relative w-full max-w-[700px] aspect-video group shadow-2xl rounded-xl overflow-hidden">
                     {projects.map((project, index) => (
                         <div
