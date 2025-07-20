@@ -1,9 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
-//=========== INTERFACE & DATA ===========//
-
-// Definisikan tipe data sekali untuk digunakan di semua komponen
 interface Certificate {
     title: string;
     description: string;
@@ -106,7 +103,6 @@ const certificates: Certificate[] = [
     },
 ];
 
-//=========== KOMPONEN MODAL ===========//
 interface ModalProps {
     cert: Certificate | null;
     onClose: () => void;
@@ -153,22 +149,17 @@ function CertificateModal({ cert, onClose }: ModalProps) {
     );
 }
 
-
-//=========== KOMPONEN KARTU ===========//
 interface CardProps {
     cert: Certificate;
     onCardClick: () => void;
     index: number;
 }
 
-// Ganti fungsi CertificateCard yang lama dengan yang ini
 function CertificateCard({ cert, onCardClick, index }: CardProps) {
     return (
-        <div 
-            onClick={onCardClick} 
-            // Tambahkan kelas 'animate-card-in' dan atur opacity awal ke 0
+        <div
+            onClick={onCardClick}
             className="group relative bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer opacity-0 animate-card-in"
-            // Tambahkan delay animasi berdasarkan index kartu
             style={{ animationDelay: `${index * 80}ms` }}
         >
             <div className="aspect-video w-full overflow-hidden">
@@ -189,7 +180,6 @@ function CertificateCard({ cert, onCardClick, index }: CardProps) {
     );
 }
 
-//=========== KOMPONEN UTAMA (DEFAULT EXPORT) ===========//
 export default function Sertifikat() {
     const [showAll, setShowAll] = useState(false);
     const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
@@ -213,12 +203,12 @@ export default function Sertifikat() {
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {visibleCertificates.map((cert, index) => (
-                           <CertificateCard 
-                                key={index} 
-                                cert={cert} 
+                            <CertificateCard
+                                key={index}
+                                cert={cert}
                                 onCardClick={() => handleCardClick(cert)}
                                 index={index}
-                           />
+                            />
                         ))}
                     </div>
 
@@ -234,7 +224,6 @@ export default function Sertifikat() {
                     )}
                 </div>
             </section>
-            
             <CertificateModal cert={selectedCert} onClose={handleCloseModal} />
         </>
     );

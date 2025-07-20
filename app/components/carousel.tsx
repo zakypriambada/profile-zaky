@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const Home = () => {
-    // ... (Data 'projects' dan fungsi navigasi Anda tetap sama)
     const projects = [
         {
             id: 1,
@@ -57,7 +56,6 @@ const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen pb-[100px] fade-in">
             <section id="carousel-section" className="w-full max-w-4xl flex flex-col items-center">
-                {/* Bagian Carousel Media tidak berubah */}
                 <div className="relative w-full max-w-[700px] aspect-video group shadow-2xl rounded-xl overflow-hidden">
                     {projects.map((project, index) => (
                         <div
@@ -78,8 +76,6 @@ const Home = () => {
                         </a>
                     </div>
                 </div>
-
-                {/* Tombol Navigasi tidak berubah */}
                 <div className="w-full max-w-[750px] flex justify-between items-center mt-[-30px] px-2 relative z-30">
                     <button
                         onClick={prevProject}
@@ -100,10 +96,7 @@ const Home = () => {
                         </svg>
                     </button>
                 </div>
-
-                {/* Info Proyek dengan Animasi */}
                 <div className="flex flex-col items-center text-center mt-8 w-full max-w-[700px]">
-                    {/* 👇 Menambahkan 'key' untuk me-reset animasi setiap kali 'currentIndex' berubah */}
                     <div key={currentIndex} className="w-full">
                         <div className="overflow-hidden">
                             <h2 className="text-3xl font-bold text-slate-800 animate-slide-up-fade" style={{ animationDelay: '0.1s' }}>
@@ -125,16 +118,12 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Indikator Titik */}
                     <div className="flex space-x-2 mt-6">
                         {projects.map((_, index) => (
                             <button key={index} onClick={() => setCurrentIndex(index)} className={`w-2 h-2 rounded-full transition-colors duration-300 ${currentIndex === index ? "bg-black" : "bg-slate-300 hover:bg-slate-400"}`} aria-label={`Go to slide ${index + 1}`} />
                         ))}
                     </div>
                 </div>
-
-                {/* Tombol See All Project */}
                 <div className="mt-12">
                     <a href="/portfolio" className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-600 transition duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         See All Projects

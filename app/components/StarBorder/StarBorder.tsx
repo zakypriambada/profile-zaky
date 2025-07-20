@@ -1,7 +1,5 @@
 import React from "react";
 import "./StarBorder.css";
-
-// Tipe untuk properti yang diteruskan ke komponen
 type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithRef<T> & {
   as?: T;
   className?: string;
@@ -10,8 +8,8 @@ type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithRef<
   speed?: React.CSSProperties["animationDuration"];
   thickness?: number;
   accentColor?: string; // Properti accentColor
-  alignContent?: React.CSSProperties["alignContent"]; // Properti alignContent
-  alignItems?: React.CSSProperties["alignItems"]; // Properti alignItems
+  alignContent?: React.CSSProperties["alignContent"]; 
+  alignItems?: React.CSSProperties["alignItems"];
 };
 
 const StarBorder = <T extends React.ElementType = "button">({
@@ -26,21 +24,20 @@ const StarBorder = <T extends React.ElementType = "button">({
   alignItems,
   ...rest
 }: StarBorderProps<T>) => {
-  const Component = as || "button"; // Default to "button" if `as` is not provided
+  const Component = as || "button"; 
 
-  // Define customStyles for CSS properties
   const customStyles: React.CSSProperties = {
     padding: `${thickness}px 0`,
     ...(alignContent ? { alignContent } : {}),
     ...(alignItems ? { alignItems } : {}),
-    ...(rest as React.HTMLProps<T>).style, // Make sure to only pass the style property correctly
+    ...(rest as React.HTMLProps<T>).style, 
   };
 
   return (
     <Component
       className={`star-border-container ${className}`}
-      {...rest} // Ensure that all props from rest are passed correctly to the Component
-      style={customStyles} // Apply custom styles, including padding, alignContent, and alignItems
+      {...rest} 
+      style={customStyles} 
     >
       <div
         className="border-gradient-bottom"

@@ -1,8 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
-//=========== INTERFACE & DATA ===========//
-
 interface Project {
     title: string;
     description: string;
@@ -87,7 +85,6 @@ const projects: Project[] = [
     },
 ];
 
-//=========== KOMPONEN MODAL (DIPERBARUI) ===========//
 interface ModalProps {
     project: Project | null;
     onClose: () => void;
@@ -137,7 +134,6 @@ function ProjectModal({ project, onClose }: ModalProps) {
     );
 }
 
-//=========== KOMPONEN KARTU ===========//
 interface CardProps {
     project: Project;
     onCardClick: () => void;
@@ -178,7 +174,6 @@ function ProjectCard({ project, onCardClick, index }: CardProps) {
     );
 }
 
-//=========== KOMPONEN UTAMA (DEFAULT EXPORT) ===========//
 export default function Project() {
     const [showAll, setShowAll] = useState(false);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
