@@ -125,7 +125,7 @@ function ProjectModal({ project, onClose }: ModalProps) {
                         ))}
                     </div>
                     <p className="text-base text-gray-600 mb-6 flex-grow">{project.description}</p>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition">
                         View Project
                     </a>
                 </div>
