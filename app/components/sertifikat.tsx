@@ -53,7 +53,7 @@ const certificates = [
     },
     {
         title: "PEMIRA 2024 – Informatika UPN “Veteran” Jawa Timur",
-        description: "Berpartisipasi sebagai Anggota Divisi Perlengkapan dan Konsumsi dalam kegiatan Pemilihan Raya (PEMIRA) 2024 yang diselenggarakan oleh Himpunan Mahasiswa Informatika Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur pada tanggal 28–29 Desember 2023. Kegiatan ini mengusung tema “Voice Your Choice” dan bertujuan untuk menumbuhkan semangat demokrasi serta pelibatan aktif mahasiswa dalam proses pemilihan organisasi kemahasiswaan.",
+        description: "Berpartisipasi sebagai Anggota Divisi Perlengkapan dan Konsumsi dalam Pemilihan Raya (PEMIRA) 2024 yang diselenggarakan oleh Himpunan Mahasiswa Informatika UPN “Veteran” Jawa Timur pada 28–29 Desember 2023, dengan tema “Voice Your Choice” untuk menumbuhkan semangat demokrasi dan pelibatan aktif mahasiswa.",
         mediaType: "image",
         mediaUrl: "/assets/sertif/pemira.jpeg",
         technologies: ["Organizer"],
@@ -67,21 +67,21 @@ const certificates = [
     },
     {
         title: "MABA CUP x Connection Day 2024 – Informatika UPN “Veteran” Jawa Timur",
-        description: "Berperan sebagai Anggota Divisi Keamanan dan Perizinan dalam kegiatan MABA CUP x Connection Day 2024 yang dilaksanakan oleh Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur pada 31 Januari – 2 Februari dan 23 Februari 2024. Acara ini bertujuan mempererat relasi antarmahasiswa melalui kegiatan olahraga dan pengembangan diri.",
+        description: "Berperan sebagai Anggota Divisi Keamanan dan Perizinan dalam MABA CUP x Connection Day 2024 yang dilaksanakan oleh Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur pada 31 Januari – 2 Februari dan 23 Februari 2024, untuk mempererat relasi antarmahasiswa melalui olahraga dan pengembangan diri.",
         mediaType: "image",
         mediaUrl: "/assets/sertif/mabacup.jpeg",
         technologies: ["Organizer"],
     },
     {
         title: "LKMM-TD 2024 – Informatika UPN “Veteran” Jawa Timur",
-        description: "Berperan sebagai Anggota Divisi Perlengkapan Konsumsi dalam kegiatan Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar (LKMM-TD) 2024 yang diselenggarakan oleh Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur pada tanggal 5, 6, dan 12 Oktober 2024. Kegiatan ini merupakan bagian dari pengembangan soft skill mahasiswa melalui pelatihan dasar kepemimpinan dan manajemen organisasi.",
+        description: "Berperan sebagai Anggota Divisi Perlengkapan Konsumsi dalam Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar (LKMM-TD) 2024 yang diselenggarakan oleh Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur pada 5, 6, dan 12 Oktober 2024, untuk pengembangan soft skill mahasiswa melalui pelatihan kepemimpinan dan manajemen organisasi.",
         mediaType: "image",
         mediaUrl: "/assets/sertif/lkmm.jpg",
         technologies: ["Organizer"],
     },
     {
         title: "MOSAIK 2023 – Informatika UPN “Veteran” Jawa Timur",
-        description: "Mengikuti rangkaian kegiatan orientasi dan pengenalan lingkungan kampus dalam acara MOSAIK 2023 Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur sebagai Peserta, yang dilaksanakan pada tanggal 21, 24, dan 30 Agustus 2023. Kegiatan ini bertujuan untuk menanamkan nilai-nilai dasar kemahasiswaan serta memperkenalkan sistem akademik dan kehidupan kampus kepada mahasiswa baru.",
+        description: "Mengikuti rangkaian orientasi dalam acara MOSAIK 2023 Fakultas Ilmu Komputer UPN “Veteran” Jawa Timur sebagai Peserta pada 21, 24, dan 30 Agustus 2023, untuk menanamkan nilai dasar kemahasiswaan serta memperkenalkan sistem akademik dan kehidupan kampus kepada mahasiswa baru.",
         mediaType: "image",
         mediaUrl: "/assets/sertif/mosaik.jpeg",
         technologies: ["Participants"],
@@ -102,7 +102,7 @@ export default function Sertifikat() {
     return (
         <section id="certificates" className="pb-[50px] relative">
             <div className="container mx-auto px-6 sm:px-10">
-                <h1 className="text-[32px] font-bold pb-[10px] pt-[50px] text-center">My Certificate</h1>
+                <h1 className="text-[39px] font-bold pb-[10px] pt-[50px] text-center">My Certificate</h1>
                 <hr className="max-w-3xl mx-auto border-t-2 pb-[20px]" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-[70px] ">
                     {visibleCertificates.map((cert, index) => (

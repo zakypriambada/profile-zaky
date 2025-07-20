@@ -12,6 +12,14 @@ const projects = [
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "React Bits"],
     },
     {
+        title: "Front-End Test API",
+        description: "Proyek ini adalah test untuk magang di Suitmedia bagian front-end, yang menguji integrasi API, penambahan efek paralaks pada banner, serta penyinkronan show per page dengan postcard yang menggunakan lazy loading. Navbar diatur sesuai ketentuan dan tampilan responsif dioptimalkan untuk perangkat mobile. Jika gambar URL tidak terdeteksi, gambar cadangan dari aset akan ditampilkan.",
+        mediaType: "image",
+        mediaUrl: "/assets/porto/porto9.png",
+        link: "https://frontend-test-zakypriambada.vercel.app/ideas",
+        technologies: ["NextJS", "Tailwind CSS", "API", "Data Structures", "GIT"],
+    },
+    {
         title: "Program Analisis Ulasan Produk",
         description: "Program ini adalah aplikasi web Streamlit untuk menganalisis sentimen ulasan produk dalam bahasa Indonesia. Pengguna mengunggah file CSV, dan aplikasi akan mengklasifikasikan sentimen ulasan (Positif, Negatif, atau Netral). Hasilnya ditampilkan dalam tabel yang bisa diunduh sebagai CSV atau PDF, serta grafik pie chart untuk menunjukkan distribusi sentimen.",
         mediaType: "video",
@@ -65,7 +73,7 @@ const projects = [
         mediaType: "image",
         mediaUrl: "/assets/porto/porto8.jpeg",
         link: "https://github.com/zakypriambada/topology_warnet",
-        technologies: ["GNS3", "Winbox", "Cisco Packet Tracer", "DHCP", "VLAN", "Static & Dynamic Routin","Hotspot", "Subnetting"],
+        technologies: ["GNS3", "Winbox", "Cisco Packet Tracer", "DHCP", "VLAN", "Static & Dynamic Routin", "Hotspot", "Subnetting"],
     },
 ];
 
@@ -77,7 +85,7 @@ export default function Project() {
                 <div className="min-h-screen overflow-x-hidden">
                     <div className="container mx-auto px-6 sm:px-10">
                         <div className="">
-                            <h1 className="text-[32px] font-bold pb-[10px] fade-in text-center">My Project</h1>
+                            <h1 className="text-[39px] font-bold pb-[10px] fade-in text-center">My Project</h1>
                             <hr className="max-w-3xl mx-auto border-t-2 pb-[20px] fade-in" />
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-[70px]">
