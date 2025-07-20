@@ -108,7 +108,7 @@ export default function Contact() {
                                 id="name"
                                 name="name"
                                 required
-                                placeholder="Masukkan nama lengkapmu"
+                                placeholder="Nama lengkap anda"
                                 className="w-full border border-black rounded-[20px] px-4 py-2 focus:outline-none focus:ring focus:ring-black/30"
                             />
                         </div>
@@ -119,7 +119,7 @@ export default function Contact() {
                                 id="email"
                                 name="email"
                                 required
-                                placeholder="youremail@email.com"
+                                placeholder="emailanda@email.com"
                                 className="w-full border border-black rounded-[20px] px-4 py-2 focus:outline-none focus:ring focus:ring-black/30"
                             />
                         </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                                 id="subject"
                                 name="subject"
                                 required
-                                placeholder="Judul pesan kamu"
+                                placeholder="Judul pesan anda"
                                 className="w-full border border-black rounded-[20px] px-4 py-2 focus:outline-none focus:ring focus:ring-black/30"
                             />
                         </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                                 name="message"
                                 required
                                 rows={5}
-                                placeholder="Tulis pesanmu di sini..."
+                                placeholder="Tulis pesan anda di sini..."
                                 className="w-full border border-black rounded-[20px] px-4 py-2 resize-none focus:outline-none focus:ring focus:ring-black/30"
                             ></textarea>
                         </div>
