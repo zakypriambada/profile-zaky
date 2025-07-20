@@ -50,7 +50,7 @@ export default function Contact() {
                     <div className="container mx-auto">
                         <div className="flex flex-col justify-center items-center animate-fadeIn pt-[100px] text-black px-4 md:px-0">
                             <BlurText
-                                text="Saya di sini kalau kamu butuh."
+                                text="Saya di sini kalau anda butuh."
                                 delay={200}
                                 animateBy="words"
                                 direction="top"
