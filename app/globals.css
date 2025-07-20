@@ -28,7 +28,6 @@ body {
 
 .fade-in {
   animation: fadeIn 2s ease-out forwards;
-  /* Durasi 1.5 detik */
 }
 
 @tailwind base;
@@ -39,6 +38,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -57,6 +57,7 @@ body {
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -73,18 +74,65 @@ body {
 @keyframes slide-up-fade {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Mulai dari posisi 20px di bawah */
+    transform: translateY(20px);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0); /* Kembali ke posisi normal */
+    transform: translateY(0);
   }
 }
 
-/* Kelas utility untuk menerapkan animasi */
 .animate-slide-up-fade {
-  /* 'both' memastikan style di 'to' tetap ada setelah animasi selesai */
   animation: slide-up-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* END CAROUSEL */
+
+/* PORTOFOLIO */
+/* PROJECT */
+
+/* Pastikan CSS ini ada di globals.css atau file CSS utama Anda */
+@keyframes card-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-in {
+  animation: card-fade-in-up 0.5s ease-out forwards;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* END PROJECT */
+
+/* SERTIF */
+@keyframes card-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Kelas utility untuk menerapkan animasi */
+.animate-card-in {
+  /* 'forwards' memastikan style di 'to' tetap ada setelah animasi selesai */
+  animation: card-fade-in-up 0.5s ease-out forwards;
+}
+/* END SERTIF */
+/* END PORTOFOLIO */

@@ -1,7 +1,18 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const certificates = [
+//=========== INTERFACE & DATA ===========//
+
+// Definisikan tipe data sekali untuk digunakan di semua komponen
+interface Certificate {
+    title: string;
+    description: string;
+    mediaType: "image";
+    mediaUrl: string;
+    technologies: string[];
+}
+
+const certificates: Certificate[] = [
     {
         title: "Flutter In Production",
         description: "Mengikuti kegiatan Flutter In Production sebagai Participant, yang membahas penerapan Flutter dalam pengembangan aplikasi siap produksi serta praktik terbaik dalam industri pengembangan perangkat lunak.",
@@ -94,57 +105,137 @@ const certificates = [
         technologies: ["Participants"],
     },
 ];
+
+//=========== KOMPONEN MODAL ===========//
+interface ModalProps {
+    cert: Certificate | null;
+    onClose: () => void;
+}
+
+function CertificateModal({ cert, onClose }: ModalProps) {
+    useEffect(() => {
+        const handleEsc = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                onClose();
+            }
+        };
+        window.addEventListener('keydown', handleEsc);
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+        };
+    }, [onClose]);
+
+    if (!cert) return null;
+
+    return (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 transition-opacity duration-300" onClick={onClose}>
+            <div className="relative bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                <button onClick={onClose} className="absolute top-3 right-3 z-10 p-1 bg-gray-200/50 hover:bg-gray-200 cursor-pointer rounded-full transition" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+                <div className="w-full md:w-1/2">
+                    <img src={cert.mediaUrl} alt={cert.title} className="w-full h-full object-contain bg-gray-100" />
+                </div>
+                <div className="w-full md:w-1/2 p-6 flex flex-col overflow-y-auto">
+                    <h2 className="text-2xl font-bold text-black mb-2">{cert.title}</h2>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {cert.technologies.map((tech, i) => (
+                            <span key={i} className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">{tech}</span>
+                        ))}
+                    </div>
+                    <p className="text-base text-gray-600 mb-6 flex-grow">{cert.description}</p>
+                    <a href={cert.mediaUrl} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition">
+                        Lihat Sertifikat
+                    </a>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
+//=========== KOMPONEN KARTU ===========//
+interface CardProps {
+    cert: Certificate;
+    onCardClick: () => void;
+    index: number;
+}
+
+// Ganti fungsi CertificateCard yang lama dengan yang ini
+function CertificateCard({ cert, onCardClick, index }: CardProps) {
+    return (
+        <div 
+            onClick={onCardClick} 
+            // Tambahkan kelas 'animate-card-in' dan atur opacity awal ke 0
+            className="group relative bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer opacity-0 animate-card-in"
+            // Tambahkan delay animasi berdasarkan index kartu
+            style={{ animationDelay: `${index * 80}ms` }}
+        >
+            <div className="aspect-video w-full overflow-hidden">
+                <img src={cert.mediaUrl} alt={cert.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="flex flex-col justify-between flex-1 p-4">
+                <div>
+                    <h3 className="text-base font-semibold text-black mb-2">{cert.title}</h3>
+                    <p className="text-sm text-gray-500 mb-3 line-clamp-3">{cert.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                        {cert.technologies.map((tech, i) => (
+                            <span key={i} className="text-xs border border-gray-300 text-gray-700 px-2 py-1 rounded-full">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+//=========== KOMPONEN UTAMA (DEFAULT EXPORT) ===========//
 export default function Sertifikat() {
     const [showAll, setShowAll] = useState(false);
+    const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+
     const handleShowAll = () => setShowAll(true);
-    const gridRef = useRef<HTMLDivElement>(null);
-    const visibleCertificates = showAll ? certificates : certificates.slice(0, 7);
+    const handleCardClick = (cert: Certificate) => setSelectedCert(cert);
+    const handleCloseModal = () => setSelectedCert(null);
+
+    const visibleCertificates = showAll ? certificates : certificates.slice(0, 8);
+
     return (
-        <section id="certificates" className="pb-[50px] relative">
-            <div className="container mx-auto px-6 sm:px-10">
-                <h1 className="text-[39px] font-bold pb-[10px] pt-[50px] text-center">My Certificate</h1>
-                <hr className="max-w-3xl mx-auto border-t-2 pb-[20px]" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-[70px] ">
-                    {visibleCertificates.map((cert, index) => (
-                        <div
-                            key={index}
-                            className={`
-        relative bg-white border border-gray-500 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all flex flex-col
-        transform transition duration-100 ease-out
-        opacity-0 translate-y-6
-        animate-fade-in-delay
-        delay-[${index * 900}ms]`}
-                        >
-                            {cert.mediaType === 'image' && (
-                                <img src={cert.mediaUrl} alt={cert.title} className="w-full h-60 object-cover" />
-                            )}
-                            <div className="flex flex-col justify-between flex-1 p-4">
-                                <div>
-                                    <h3 className="text-[18px] font-semibold text-black mb-2">{cert.title}</h3>
-                                    <p className="text-[14px] text-gray-500 mb-3">{cert.description}</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {cert.technologies.map((tech, i) => (
-                                            <span key={i} className="text-[13px] border border-gray-300 text-gray-700 px-2 py-1 rounded-full">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+        <>
+            <section id="certificates" className="py-16 fade-in">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-12">
+                        <h1 className="text-4xl font-bold md:text-5xl bg-black from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                            My Certificates
+                        </h1>
+                        <div className="w-60 h-1 mx-auto bg-black from-blue-600 to-purple-600 rounded-full"></div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {visibleCertificates.map((cert, index) => (
+                           <CertificateCard 
+                                key={index} 
+                                cert={cert} 
+                                onCardClick={() => handleCardClick(cert)}
+                                index={index}
+                           />
+                        ))}
+                    </div>
+
                     {!showAll && (
-                        <div className="flex items-center justify-center pt-[35px]">
+                        <div className="text-center mt-12 col-span-full">
                             <button
                                 onClick={handleShowAll}
-                                className="flex items-center gap-2 text-white bg-black px-4 py-2 rounded-full hover:bg-gray-600 transition shadow-lg cursor-pointer"
+                                className="bg-black cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-600 transition transform hover:scale-105 shadow-lg"
                             >
-                                Lihat Lebih Banyak <span className="text-xl">→</span>
+                                Tampilkan Semua
                             </button>
                         </div>
                     )}
                 </div>
-            </div>
-        </section>
+            </section>
+            
+            <CertificateModal cert={selectedCert} onClose={handleCloseModal} />
+        </>
     );
 }

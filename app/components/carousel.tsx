@@ -83,7 +83,7 @@ const Home = () => {
                 <div className="w-full max-w-[750px] flex justify-between items-center mt-[-30px] px-2 relative z-30">
                     <button
                         onClick={prevProject}
-                        className="p-2 bg-black/70 rounded-full shadow-lg hover:bg-black/90 transition"
+                        className="p-2 bg-black/70 rounded-full shadow-lg hover:bg-black/90 transition cursor-pointer"
                         aria-label="Previous Project"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +92,7 @@ const Home = () => {
                     </button>
                     <button
                         onClick={nextProject}
-                        className="p-2 bg-black/70 rounded-full shadow-lg hover:bg-black/90 transition"
+                        className="p-2 bg-black/70 rounded-full shadow-lg hover:bg-black/90 transition cursor-pointer"
                         aria-label="Next Project"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
