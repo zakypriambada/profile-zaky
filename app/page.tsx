@@ -23,8 +23,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-6 order-2 md:order-1">
                 <div className={isVisible ? "fade-in" : ""}>
-                  <p className="text-[25px]">Hallo</p>
-                  <h1 className="text-[35px] font-bold leading-tight">
+                  <p className="text-[20px]">Hallo</p>
+                  <h1 className="text-[30px] font-bold leading-tight">
                     I'm Muhamad Zaky Priambada Anugrah
                   </h1>
                   <p className="text-[16px] mt-2 text-justify">
@@ -33,7 +33,7 @@ export default function Home() {
                   <div className="mt-2">
                     <a
                       href="/contact"
-                      className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-600 transition duration-300 inline-block"
+                      className="bg-[#2585e7] text-[16px] text-white px-6 py-3 rounded-full hover:bg-[#1E73E8] transition duration-300 inline-block"
                     >
                       Contact Me!
                     </a>
@@ -65,8 +65,8 @@ export default function Home() {
       </section>
       <section className=" fade-in">
         <div className="text-center">
-          <h1 className="text-[39px] font-bold">Skills</h1>
-          <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-2" />
+          <h1 className="text-[30px] font-bold">Skills</h1>
+          <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-1" />
           <p className="text-[17px] pt-[10px] text-gray-600">Berikut adalah keterampilan dan teknologi yang saya kuasai</p>
         </div>
         <div className="pt-10">
@@ -75,8 +75,8 @@ export default function Home() {
       </section>
       <section id="portofolio" className="pt-[100px] px-4 sm:px-0 fade-in">
         <div className="text-center">
-          <h1 className="text-[39px] font-bold">Portfolio</h1>
-          <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-2" />
+          <h1 className="text-[30px] font-bold">Portfolio</h1>
+          <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-1" />
           <p className="text-[17px] pt-[10px] text-gray-600">Semua proyek yang telah saya kerjakan</p>
         </div>
         <div>

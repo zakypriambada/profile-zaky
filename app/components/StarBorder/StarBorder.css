@@ -37,11 +37,9 @@
 
 .inner-content {
   position: relative;
-  background: linear-gradient(to bottom, #ffffff, #ffffff);
-  border: 1px solid #222222;
-  color: rgb(0, 0, 0);
+  background: linear-gradient(to bottom, #2585e7, #2585e7);
+  color: white;
   font-size: 16px;
-  font-weight: bold;
   text-align: center;
   padding: 10px 20px;
   border-radius: 20px;
@@ -49,7 +47,7 @@
 }
 
 .inner-content:hover {
-  background: linear-gradient(to bottom, #a8a8a8, #a8a8a8);
+  background: linear-gradient(to bottom, #1E73E8, #1E73E8);
 }
 
 @keyframes star-movement-bottom {

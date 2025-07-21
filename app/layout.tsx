@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// 1. Impor font Geist dari paketnya langsung, bukan dari 'next/font/google'
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// (Tidak ada perubahan di sini, konfigurasi variabel sudah benar)
+const geistSans = GeistSans;
+const geistMono = GeistMono;
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// 2. Tambahkan favicon melalui properti 'icons' di metadata
 export const metadata: Metadata = {
   title: "Profile Zaky",
   description: "Web Profile Portofolio",
+  icons: {
+    icon: '/assets/icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -23,13 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/assets/icon.png" type="image/svg+xml" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    // 3. Gabungkan className dari font dengan cara yang lebih bersih
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      {/* Tag <head> manual sudah dihapus karena Next.js mengelolanya secara otomatis */}
+      <body className="antialiased">
         {children}
       </body>
     </html>

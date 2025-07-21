@@ -18,7 +18,7 @@ export default function Portfolio() {
         setIsVisible(true);
     }, []);
     return (
-        <div className="flex flex-col min-h-screen bg-white">
+        <div className="flex flex-col min-h-screen">
             <Navbar items={navItems} />
             <div className="flex flex-col justify-center items-center animate-fadeIn pt-[140px] text-black px-4 md:px-0">
                 <BlurText
@@ -37,7 +37,7 @@ export default function Portfolio() {
             {isVisible && (
                 <button
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    className="fixed bottom-6 right-6 z-50 bg-black text-white p-4 rounded-full shadow-lg hover:bg-gray-500 transition cursor-pointer"
+                    className="fixed bottom-6 right-6 z-50 bg-[#2585e7] text-white p-4 rounded-full shadow-lg hover:bg-[#1E73E8] transition cursor-pointer"
                     aria-label="Scroll to top"
                 >
                     ↑

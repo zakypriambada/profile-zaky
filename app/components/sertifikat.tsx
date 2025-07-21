@@ -124,10 +124,10 @@ function CertificateModal({ cert, onClose }: ModalProps) {
     if (!cert) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 transition-opacity duration-300" onClick={onClose}>
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-[3px] flex items-center justify-center z-50 p-4 transition-opacity duration-300" onClick={onClose}>
             <div className="relative bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden" onClick={(e) => e.stopPropagation()}>
-                <button onClick={onClose} className="absolute top-3 right-3 z-10 p-1 bg-gray-200/50 hover:bg-gray-200 cursor-pointer rounded-full transition" aria-label="Close modal">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                <button onClick={onClose} className="absolute top-3 right-3 z-10 p-1 bg-[#2585e7] hover:bg-[#1E73E8] cursor-pointer rounded-full transition" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 <div className="w-full md:w-1/2">
                     <img src={cert.mediaUrl} alt={cert.title} className="w-full h-full object-contain bg-gray-100" />
@@ -140,7 +140,7 @@ function CertificateModal({ cert, onClose }: ModalProps) {
                         ))}
                     </div>
                     <p className="text-base text-gray-600 mb-6 flex-grow">{cert.description}</p>
-                    <a href={cert.mediaUrl} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition">
+                    <a href={cert.mediaUrl} target="_blank" rel="noopener noreferrer" className="w-full text-center bg-[#2585e7] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1E73E8] transition">
                         Lihat Sertifikat
                     </a>
                 </div>
@@ -159,7 +159,7 @@ function CertificateCard({ cert, onCardClick, index }: CardProps) {
     return (
         <div
             onClick={onCardClick}
-            className="group relative bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer opacity-0 animate-card-in"
+            className="group relative bg-[#f1f3fb]  rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer opacity-0 animate-card-in"
             style={{ animationDelay: `${index * 80}ms` }}
         >
             <div className="aspect-video w-full overflow-hidden">
@@ -168,7 +168,7 @@ function CertificateCard({ cert, onCardClick, index }: CardProps) {
             <div className="flex flex-col justify-between flex-1 p-4">
                 <div>
                     <h3 className="text-base font-semibold text-black mb-2">{cert.title}</h3>
-                    <p className="text-sm text-gray-500 mb-3 line-clamp-3">{cert.description}</p>
+                    <p className="text-sm text-black-500 mb-3 line-clamp-3">{cert.description}</p>
                     <div className="flex flex-wrap gap-2">
                         {cert.technologies.map((tech, i) => (
                             <span key={i} className="text-xs border border-gray-300 text-gray-700 px-2 py-1 rounded-full">{tech}</span>
@@ -195,10 +195,10 @@ export default function Sertifikat() {
             <section id="certificates" className="py-16 fade-in">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12">
-                        <h1 className="text-4xl font-bold md:text-5xl bg-black from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                        <h1 className="text-4xl font-bold md:text-[30px] bg-black from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
                             My Certificates
                         </h1>
-                        <div className="w-60 h-1 mx-auto bg-black from-blue-600 to-purple-600 rounded-full"></div>
+                        <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-1" />
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -216,7 +216,7 @@ export default function Sertifikat() {
                         <div className="text-center mt-12 col-span-full">
                             <button
                                 onClick={handleShowAll}
-                                className="bg-black cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-600 transition transform hover:scale-105 shadow-lg"
+                                className="bg-[#2585e7] cursor-pointer text-white px-6 py-3 rounded-full hover:bg-[#1E73E8] transition transform hover:scale-105 shadow-lg"
                             >
                                 Tampilkan Semua
                             </button>

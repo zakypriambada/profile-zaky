@@ -71,7 +71,7 @@ const Home = () => {
                         </div>
                     ))}
                     <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <a href={projects[currentIndex].projectUrl} target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-600 transition transform hover:scale-105">
+                        <a href={projects[currentIndex].projectUrl} target="_blank" rel="noopener noreferrer" className="bg-[#2585e7] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1E73E8] transition transform hover:scale-105">
                             View Project
                         </a>
                     </div>
@@ -79,7 +79,7 @@ const Home = () => {
                 <div className="w-full max-w-[750px] flex justify-between items-center mt-[-30px] px-2 relative z-30">
                     <button
                         onClick={prevProject}
-                        className="p-2 bg-black/70 rounded-full shadow-lg hover:bg-black/90 transition cursor-pointer"
+                        className="p-2 bg-[#2585e7] rounded-full shadow-lg hover:bg-[#1E73E8] transition cursor-pointer"
                         aria-label="Previous Project"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,7 +88,7 @@ const Home = () => {
                     </button>
                     <button
                         onClick={nextProject}
-                        className="p-2 bg-black/70 rounded-full shadow-lg hover:bg-black/90 transition cursor-pointer"
+                        className="p-2 bg-[#2585e7] rounded-full shadow-lg hover:bg-[#1E73E8] transition cursor-pointer"
                         aria-label="Next Project"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -104,7 +104,7 @@ const Home = () => {
                             </h2>
                         </div>
                         <div className="overflow-hidden mt-2">
-                            <p className="text-base text-slate-600 max-w-2xl mx-auto animate-slide-up-fade" style={{ animationDelay: '0.2s' }}>
+                            <p className="text-base text-gray-600 max-w-2xl mx-auto animate-slide-up-fade" style={{ animationDelay: '0.2s' }}>
                                 {projects[currentIndex].description}
                             </p>
                         </div>
@@ -120,12 +120,12 @@ const Home = () => {
                     </div>
                     <div className="flex space-x-2 mt-6">
                         {projects.map((_, index) => (
-                            <button key={index} onClick={() => setCurrentIndex(index)} className={`w-2 h-2 rounded-full transition-colors duration-300 ${currentIndex === index ? "bg-black" : "bg-slate-300 hover:bg-slate-400"}`} aria-label={`Go to slide ${index + 1}`} />
+                            <button key={index} onClick={() => setCurrentIndex(index)} className={`w-2 h-2 rounded-full transition-colors duration-300 ${currentIndex === index ? "bg-[#2585e7]" : "bg-slate-300 hover:bg-slate-400"}`} aria-label={`Go to slide ${index + 1}`} />
                         ))}
                     </div>
                 </div>
                 <div className="mt-12">
-                    <a href="/portfolio" className="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-600 transition duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <a href="/portfolio" className="bg-[#2585e7] text-[16px] text-white px-8 py-3 rounded-full hover:bg-[#1E73E8] transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         See All Projects
                     </a>
                 </div>

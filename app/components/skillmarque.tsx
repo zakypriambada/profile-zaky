@@ -35,7 +35,7 @@ const SkillMarquee: React.FC = () => {
     const allSkills = [...skills, ...skills];
 
     return (
-        <div className="overflow-hidden bg-black py-6">
+        <div className="overflow-hidden bg-[#f1f3fb] py-4">
             <div className="animate-marquee">
                 {allSkills.map((src, index) => (
                     <img
