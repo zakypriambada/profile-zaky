@@ -30,9 +30,6 @@ body {
   animation: fadeIn 2s ease-out forwards;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @keyframes scroll {
   0% {
