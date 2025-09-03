@@ -13,12 +13,12 @@ const Home = () => {
         },
         {
             id: 2,
-            title: "Program Analisis Ulasan Produk",
-            description: "Program ini adalah aplikasi web Streamlit untuk menganalisis sentimen ulasan produk dalam bahasa Indonesia. Pengguna mengunggah file CSV, dan aplikasi akan mengklasifikasikan sentimen ulasan (Positif, Negatif, atau Netral). Hasilnya ditampilkan dalam tabel yang bisa diunduh sebagai CSV atau PDF, serta grafik pie chart untuk menunjukkan distribusi sentimen.",
-            mediaType: "video",
-            mediaUrl: "/assets/porto/porto2.mp4",
-            projectUrl: "https://github.com/zakypriambada/program-analisis-ulasan-produk",
-            technologies: ["Python", "Streamlit", "Pandas", "Matplotlib", "Lexicon Based"],
+            title: "Riniko Pempek",
+            description: "Website ini dikembangkan untuk mendukung UMKM kuliner Riniko Pempek dalam memperluas jangkauan pemasaran secara digital. Fitur yang dihadirkan meliputi banner interaktif dengan efek parallax, menu produk yang terintegrasi dengan tombol pemesanan cepat, serta tampilan responsif yang dioptimalkan untuk perangkat mobile. Selain itu, implementasi lazy loading pada gambar memastikan website tetap ringan dan cepat diakses. Navigasi dirancang sederhana agar pelanggan mudah menemukan informasi, mulai dari daftar menu, lokasi usaha, hingga kontak WhatsApp untuk pemesanan langsung. Proyek ini menunjukkan bagaimana teknologi modern dapat membantu UMKM memaksimalkan potensi pemasaran online.",
+            mediaType: "image",
+            mediaUrl: "/assets/porto/porto10.jpeg",
+            projectUrl: "https://riniko-pempek.vercel.app",
+            technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "React Bits"],
         },
         {
             id: 3,
