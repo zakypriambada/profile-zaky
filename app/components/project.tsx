@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
+// DIUBAH: Menambahkan properti 'category'
 interface Project {
     title: string;
     description: string;
@@ -8,8 +9,10 @@ interface Project {
     mediaUrl: string;
     link: string;
     technologies: string[];
+    category: string;
 }
 
+// DIUBAH: Menambahkan data kategori pada setiap proyek
 const projects: Project[] = [
     {
         title: "Jackduls Brand Website",
@@ -18,6 +21,16 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto1.mp4",
         link: "https://jackduls-roan.vercel.app/",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "React Bits"],
+        category: "Web Development",
+    },
+    {
+        title: "Aplikasi Prediksi Cuaca",
+        description: "Sebuah aplikasi cuaca lintas platform (iOS & Android) yang dibangun sepenuhnya dengan Flutter. Aplikasi ini menyediakan data cuaca akurat secara real-time, prakiraan per jam, dan visualisasi data melalui peta cuaca interaktif. Proyek ini menunjukkan kemampuan dalam integrasi API pihak ketiga (OpenWeatherMap), manajemen state, dan pembuatan antarmuka pengguna yang bersih dan fungsional.",
+        mediaType: "image",
+        mediaUrl: "/assets/porto/porto???.jpeg",
+        link: "#",
+        technologies: ["Flutter", "Dart", "REST API", "OpenWeatherMap API", "JSON", "Geolocation (GPS)", "flutter_map", "State Management", "Android", "iOS"],
+        category: "Mobile",
     },
     {
         title: "Front-End Test API",
@@ -26,6 +39,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto9.png",
         link: "https://frontend-test-zakypriambada.vercel.app/ideas",
         technologies: ["NextJS", "Tailwind CSS", "API", "Data Structures", "GIT"],
+        category: "Web Development",
     },
     {
         title: "Riniko Pempek",
@@ -34,6 +48,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto10.jpeg",
         link: "https://riniko-pempek.vercel.app",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "React Bits"],
+        category: "Web Development",
     },
     {
         title: "Program Analisis Ulasan Produk",
@@ -42,6 +57,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto2.mp4",
         link: "https://github.com/zakypriambada/program-analisis-ulasan-produk",
         technologies: ["Python", "Streamlit", "Pandas", "Matplotlib", "Lexicon Based"],
+        category: "Data & ML",
     },
     {
         title: "Jackduls UI Prototype",
@@ -50,6 +66,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto3.jpeg",
         link: "https://www.figma.com/design/ZjHXDNFRnJE2njg3m9UU6w/UAS-DESTAR",
         technologies: ["Figma", "UI Design"],
+        category: "UI/UX Design",
     },
     {
         title: "Web Jackduls Project UAS",
@@ -58,6 +75,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto4.svg",
         link: "https://jackduls.jagoankode.my.id/",
         technologies: ["HTML", "CSS3", "BootStrap 5", "JavaScript", "PHP"],
+        category: "Web Development",
     },
     {
         title: "Pengembangan Sistem Point of Sale berbasis Java Desktop",
@@ -66,6 +84,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto5.png",
         link: "https://github.com/zakypriambada/final-project-pbo",
         technologies: ["Java", "Java Swing", "GUI", "MySQL"],
+        category: "Software & Networking",
     },
     {
         title: "SISTEM ANALISIS SENTIMEN ULASAN PRODUK BERBAHASA INDONESIAMENGGUNAKAN METODE LEXICON DENGAN VISUALISASI INTERAKTIF (Jurnal)",
@@ -74,6 +93,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto6.png",
         link: "https://ejournal.cahayailmubangsa.institute/index.php/kohesi/article/view/3747",
         technologies: ["Mendeley", "Publish or Perish", "Kohesi: Jurnal Sains dan Teknologi"],
+        category: "Data & ML",
     },
     {
         title: "Real-Time Hand Gesture Detection Using OpenCV & MediaPipe",
@@ -82,6 +102,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto7.jpeg",
         link: "https://github.com/zakypriambada/finger-five-test",
         technologies: ["Python", "Google Colabs", "Media Pipe", "Open CV"],
+        category: "Data & ML",
     },
     {
         title: "Topologi Jaringan Warnet dengan Segmentasi VLAN, DHCP, dan Hotspot",
@@ -90,9 +111,11 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto8.jpeg",
         link: "https://github.com/zakypriambada/topology_warnet",
         technologies: ["GNS3", "Winbox", "Cisco Packet Tracer", "DHCP", "VLAN", "Static & Dynamic Routin", "Hotspot", "Subnetting"],
+        category: "Software & Networking",
     },
 ];
 
+// ... (Komponen ProjectModal dan ProjectCard tetap sama, tidak perlu diubah)
 interface ModalProps {
     project: Project | null;
     onClose: () => void;
@@ -182,15 +205,32 @@ function ProjectCard({ project, onCardClick, index }: CardProps) {
     );
 }
 
+
 export default function Project() {
     const [showAll, setShowAll] = useState(false);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    // BARU: State untuk kategori yang dipilih
+    const [selectedCategory, setSelectedCategory] = useState('All');
+
+    // BARU: Mendapatkan daftar kategori unik dari data proyek
+    const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
 
     const handleShowAll = () => setShowAll(true);
     const handleCardClick = (project: Project) => setSelectedProject(project);
     const handleCloseModal = () => setSelectedProject(null);
 
-    const visibleProjects = showAll ? projects : projects.slice(0, 8);
+    // BARU: Fungsi untuk mengubah kategori dan mereset 'showAll'
+    const handleCategoryChange = (category: string) => {
+        setSelectedCategory(category);
+        setShowAll(false); // Kembali ke tampilan awal (8 item) saat ganti kategori
+    };
+
+    // DIUBAH: Logika untuk memfilter proyek berdasarkan kategori
+    const filteredProjects = selectedCategory === 'All'
+        ? projects
+        : projects.filter(project => project.category === selectedCategory);
+
+    const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 8);
 
     return (
         <>
@@ -203,10 +243,25 @@ export default function Project() {
                         <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-1" />
                     </div>
 
+                    <div className="flex justify-center flex-wrap gap-3 mb-12">
+                        {categories.map(category => (
+                            <button
+                                key={category}
+                                onClick={() => handleCategoryChange(category)}
+                                className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 ${selectedCategory === category
+                                        ? 'bg-[#2585e7] text-white'
+                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {visibleProjects.map((project, index) => (
                             <ProjectCard
-                                key={index}
+                                key={project.title}
                                 project={project}
                                 onCardClick={() => handleCardClick(project)}
                                 index={index}
@@ -214,7 +269,7 @@ export default function Project() {
                         ))}
                     </div>
 
-                    {!showAll && projects.length > 8 && (
+                    {!showAll && filteredProjects.length > 8 && (
                         <div className="text-center mt-12">
                             <button
                                 onClick={handleShowAll}
