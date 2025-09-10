@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/app/components/navbar";
 import Footer from "../components/footer";
 import BlurText from "../components/BlurText/BlurText";
+import BottomNav from "../components/bottomnav";
 
 const handleAnimationComplete = () => {
     console.log("Animation completed!");
@@ -157,6 +158,7 @@ export default function Contact() {
                 </div>
             </section>
             <Footer />
+            <BottomNav/>
         </div>
     );
 }

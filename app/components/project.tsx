@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
-// DIUBAH: Menambahkan properti 'category'
 interface Project {
     title: string;
     description: string;
@@ -12,7 +11,6 @@ interface Project {
     category: string;
 }
 
-// DIUBAH: Menambahkan data kategori pada setiap proyek
 const projects: Project[] = [
     {
         title: "Jackduls Brand Website",
@@ -115,7 +113,6 @@ const projects: Project[] = [
     },
 ];
 
-// ... (Komponen ProjectModal dan ProjectCard tetap sama, tidak perlu diubah)
 interface ModalProps {
     project: Project | null;
     onClose: () => void;
@@ -209,23 +206,21 @@ function ProjectCard({ project, onCardClick, index }: CardProps) {
 export default function Project() {
     const [showAll, setShowAll] = useState(false);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    // BARU: State untuk kategori yang dipilih
+
     const [selectedCategory, setSelectedCategory] = useState('All');
 
-    // BARU: Mendapatkan daftar kategori unik dari data proyek
+  
     const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
 
     const handleShowAll = () => setShowAll(true);
     const handleCardClick = (project: Project) => setSelectedProject(project);
     const handleCloseModal = () => setSelectedProject(null);
 
-    // BARU: Fungsi untuk mengubah kategori dan mereset 'showAll'
     const handleCategoryChange = (category: string) => {
         setSelectedCategory(category);
-        setShowAll(false); // Kembali ke tampilan awal (8 item) saat ganti kategori
+        setShowAll(false); 
     };
 
-    // DIUBAH: Logika untuk memfilter proyek berdasarkan kategori
     const filteredProjects = selectedCategory === 'All'
         ? projects
         : projects.filter(project => project.category === selectedCategory);
@@ -248,7 +243,7 @@ export default function Project() {
                             <button
                                 key={category}
                                 onClick={() => handleCategoryChange(category)}
-                                className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 ${selectedCategory === category
+                                className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 cursor-pointer ${selectedCategory === category
                                         ? 'bg-[#2585e7] text-white'
                                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                     }`}
@@ -273,7 +268,7 @@ export default function Project() {
                         <div className="text-center mt-12">
                             <button
                                 onClick={handleShowAll}
-                                className="bg-[#2585e7] text-white cursor-pointer px-6 py-3 rounded-full hover:bg-[#1E73E8] transition transform hover:scale-105 shadow-lg"
+                                className="bg-[#2585e7] text-white cursor-pointer px-6 py-3 rounded-full hover:bg-[#1E73E8]"
                             >
                                 Tampilkan Semua
                             </button>

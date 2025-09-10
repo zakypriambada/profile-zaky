@@ -216,7 +216,7 @@ export default function Sertifikat() {
                         <div className="text-center mt-12 col-span-full">
                             <button
                                 onClick={handleShowAll}
-                                className="bg-[#2585e7] cursor-pointer text-white px-6 py-3 rounded-full hover:bg-[#1E73E8] transition transform hover:scale-105 shadow-lg"
+                                className="bg-[#2585e7] cursor-pointer text-white px-6 py-3 rounded-full hover:bg-[#1E73E8]"
                             >
                                 Tampilkan Semua
                             </button>

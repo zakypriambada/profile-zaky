@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import BlurText from "../components/BlurText/BlurText";
 import Project from "../components/project";
 import Sertifikat from "../components/sertifikat";
+import BottomNav from "../components/bottomnav";
 
 const handleAnimationComplete = () => {
     console.log("Animation completed!");
@@ -44,6 +45,7 @@ export default function Portfolio() {
                 </button>
             )}
             <Footer />
+            <BottomNav/>
         </div>
     );
 }

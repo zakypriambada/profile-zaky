@@ -33,9 +33,9 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
 
     return (
         <nav
-            className={`md:bg-blue-900/7 md:backdrop-blur-md bg-white/85 py-[10px] w-full border-b border-neutral-300 transition-all duration-800 ease-in-out transform fixed top-0 left-0 right-0 z-50 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-                }`}
-        >
+            className={`hidden md:block md:bg-blue-900/7 md:backdrop-blur-md bg-white/85 py-[10px] w-full border-b border-neutral-300 transition-all duration-800 ease-in-out transform fixed top-0 left-0 right-0 z-50 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+                }`}
+        >
             <div className="max-w-screen-xl mx-auto px-6 flex justify-center items-center">
                 <ul className="hidden md:flex space-x-8">
                     {items.map((item, index) => (

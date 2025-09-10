@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Carousel from "./components/carousel";
 import SkillMarquee from "./components/skillmarque";
 import ProfileCard from './components/ProfileCard/ProfileCard'
+import BottomNav from "./components/bottomnav";
 
 export default function Home() {
   const navItems = ["Home", "Portofolio", "Contact"];
@@ -84,6 +85,7 @@ export default function Home() {
         </div>
       </section>
       <Footer />
+      <BottomNav/>
     </div>
   );
 }
