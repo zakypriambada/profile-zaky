@@ -184,6 +184,18 @@ export default function Sertifikat() {
     const [showAll, setShowAll] = useState(false);
     const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
+    // ✅ PERBAIKAN DITAMBAHKAN DI SINI
+    useEffect(() => {
+        if (selectedCert) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedCert]);
+
     const handleShowAll = () => setShowAll(true);
     const handleCardClick = (cert: Certificate) => setSelectedCert(cert);
     const handleCloseModal = () => setSelectedCert(null);

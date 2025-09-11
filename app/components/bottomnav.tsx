@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import React from 'react';
-import { usePathname } from 'next/navigation'; // Import usePathname
+import { usePathname } from 'next/navigation';
 import { FaHome, FaBriefcase, FaEnvelope } from 'react-icons/fa';
 
 interface NavItem {
@@ -30,9 +30,7 @@ export default function BottomNav() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            // Ganti warna jika link aktif
-                            className={`flex flex-col items-center justify-center transition-colors ${isActive ? 'text-[#2585e7]' : 'text-gray-600 hover:text-[#2585e7]'}`}
-                        >
+                            className={`flex flex-col items-center justify-center transition-colors ${isActive ? 'text-[#2585e7]' : 'text-gray-600 hover:text-[#2585e7]'}`}>
                             {item.icon}
                             <span className="text-xs mt-1">{item.name}</span>
                         </Link>

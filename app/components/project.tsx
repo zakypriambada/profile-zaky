@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
+// ... (Your Project interface and projects array remain unchanged)
 interface Project {
     title: string;
     description: string;
@@ -113,6 +114,7 @@ const projects: Project[] = [
     },
 ];
 
+// ... (Your ProjectModal and ProjectCard components remain unchanged)
 interface ModalProps {
     project: Project | null;
     onClose: () => void;
@@ -209,7 +211,19 @@ export default function Project() {
 
     const [selectedCategory, setSelectedCategory] = useState('All');
 
-  
+    // ✅ FIX IS HERE
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedProject]);
+
+
     const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
 
     const handleShowAll = () => setShowAll(true);
@@ -218,7 +232,7 @@ export default function Project() {
 
     const handleCategoryChange = (category: string) => {
         setSelectedCategory(category);
-        setShowAll(false); 
+        setShowAll(false);
     };
 
     const filteredProjects = selectedCategory === 'All'
