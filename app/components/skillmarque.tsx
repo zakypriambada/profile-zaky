@@ -9,6 +9,9 @@ const skills = [
     '/assets/skills/logo-python.svg',
     '/assets/skills/logo-java.svg',
     '/assets/skills/logo-cpp.svg',
+    '/assets/skills/logo-androidstudio.svg',
+    '/assets/skills/logo-flutter.svg',
+    '/assets/skills/logo-dart.svg',
     '/assets/skills/logo-c.svg',
     '/assets/skills/logo-react.svg',
     '/assets/skills/logo-ts.svg',
@@ -35,7 +38,7 @@ const SkillMarquee: React.FC = () => {
     const allSkills = [...skills, ...skills];
 
     return (
-        <div className="overflow-hidden bg-[#f1f3fb] py-4">
+        <div className="overflow-hidden bg-[#f1f3fb] py-4 text-center">
             <div className="animate-marquee">
                 {allSkills.map((src, index) => (
                     <img
@@ -46,6 +49,7 @@ const SkillMarquee: React.FC = () => {
                     />
                 ))}
             </div>
+            <p className="text-[16px] p-[40px] md:mr-[100px] md:ml-[100px] text-black ">Keahlian saya mencakup berbagai teknologi dan alat seperti HTML, CSS, JavaScript, PHP, Python, Java, C++, Android Studio, Flutter, Dart, C, React, TypeScript, Tailwind CSS, Next.js, Node.js, Bootstrap, Git, Laragon, MySQL, Docker, PostgreSQL, GNS3, Winbox, NetBeans, Canva, Figma, Photoshop, Premiere Pro, dan CapCut.</p>
         </div>
     );
 };

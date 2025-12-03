@@ -29,7 +29,7 @@ export default function Home() {
                     I'm Muhamad Zaky Priambada Anugrah
                   </h1>
                   <p className="text-[16px] mt-2 text-justify">
-                    Sebagai mahasiswa Sarjana Informatika di Universitas Pembangunan Nasional "Veteran" Jawa Timur, saya berfokus pada pengembangan web front-end dengan landasan yang kuat dalam desain UI/UX, antarmuka yang responsif, serta teknologi web modern seperti HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, dan TypeScript. Saya memiliki pengalaman praktis dalam membangun aplikasi web yang interaktif dan berbasis komponen, termasuk situs portofolio dan platform e-commerce. Meskipun pengembangan front-end adalah keahlian utama saya, saya juga memiliki pengetahuan kerja mengenai teknologi back-end seperti PHP, Python, dan SQL untuk mendukung fungsionalitas full-stack bila diperlukan. Saya memiliki semangat dalam menciptakan pengalaman digital yang mulus, mudah diakses, dan terstruktur dengan baik.
+                    Sebagai mahasiswa Sarjana Informatika di Universitas Pembangunan Nasional "Veteran" Jawa Timur, saya memiliki keahlian dalam pengembangan web full-stack dan aplikasi mobile menggunakan Flutter dan Dart. Dengan landasan kuat dalam desain UI/UX, saya menguasai pembuatan antarmuka yang responsif dan menggunakan teknologi web modern seperti HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, dan TypeScript. Saya memiliki pengalaman membangun aplikasi web interaktif berbasis komponen, termasuk situs portofolio dan platform e-commerce. Selain keahlian utama saya di pengembangan front-end, saya juga berpengalaman dalam teknologi back-end seperti PHP, Python, dan SQL untuk mendukung fungsionalitas full-stack yang lengkap. Saya bersemangat untuk menciptakan pengalaman digital yang mulus, mudah diakses, dan terstruktur dengan baik.
                   </p>
                   <div className="mt-2">
                     <a
@@ -50,7 +50,7 @@ export default function Home() {
               <div className="md:col-span-6 order-1 md:order-2 flex justify-center fade-in">
                 <ProfileCard
                   name="Jecky"
-                  title="Front End Web Developer"
+                  title="Web & Mobile Developer"
                   handle="javicodes"
                   status="Online"
                   contactText="Contact Me"
