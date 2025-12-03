@@ -65,12 +65,7 @@ export default function Home() {
         </div>
       </section>
       <section className=" fade-in">
-        <div className="text-center">
-          <h1 className="text-[30px] font-bold">Skills</h1>
-          <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-1" />
-          <p className="text-[17px] pt-[10px] text-gray-600">Berikut adalah keterampilan dan teknologi yang saya kuasai</p>
-        </div>
-        <div className="pt-10">
+        <div className="">
           <SkillMarquee />
         </div>
       </section>

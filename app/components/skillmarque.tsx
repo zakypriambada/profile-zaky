@@ -39,7 +39,10 @@ const SkillMarquee: React.FC = () => {
 
     return (
         <div className="overflow-hidden bg-[#f1f3fb] py-4 text-center">
-            <div className="animate-marquee">
+            <h1 className="text-[30px] pt-[40px] font-bold">Skills</h1>
+          <hr className="max-w-[300px] sm:max-w-2xl md:max-w-3xl mx-auto border-t-1" />
+          <p className="text-[17px] pt-[10px] text-gray-600">Berikut adalah keterampilan dan teknologi yang saya kuasai</p>
+            <div className="animate-marquee p-[40px]">
                 {allSkills.map((src, index) => (
                     <img
                         key={index}
