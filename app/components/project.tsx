@@ -24,10 +24,10 @@ const projects: Project[] = [
     },
     {
         title: "Aplikasi Prediksi Cuaca",
-        description: "Sebuah aplikasi cuaca lintas platform (iOS & Android) yang dibangun sepenuhnya dengan Flutter. Aplikasi ini menyediakan data cuaca akurat secara real-time, prakiraan per jam, dan visualisasi data melalui peta cuaca interaktif. Proyek ini menunjukkan kemampuan dalam integrasi API pihak ketiga (OpenWeatherMap), manajemen state, dan pembuatan antarmuka pengguna yang bersih dan fungsional.",
+        description: "Sebuah aplikasi cuaca lintas platform (Android) yang dibangun sepenuhnya dengan Flutter. Aplikasi ini menyediakan data cuaca akurat secara real-time, prakiraan per jam, dan visualisasi data melalui peta cuaca interaktif. Proyek ini menunjukkan kemampuan dalam integrasi API pihak ketiga (BMKG), manajemen state, dan pembuatan antarmuka pengguna yang bersih dan fungsional.",
         mediaType: "image",
-        mediaUrl: "/assets/porto/porto???.jpeg",
-        link: "#",
+        mediaUrl: "/assets/porto/porto11.png",
+        link: "https://drive.google.com/file/d/12e0OHIpbakX13-Bh2V7SlHr-AZb0UDeP/view?usp=sharing",
         technologies: ["Flutter", "Dart", "REST API", "OpenWeatherMap API", "JSON", "Geolocation (GPS)", "flutter_map", "State Management", "Android", "iOS"],
         category: "Mobile",
     },

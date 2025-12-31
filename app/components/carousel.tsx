@@ -8,20 +8,20 @@ const Home = () => {
     const projects = [
         {
             id: 1,
+            title: "Aplikasi Prediksi Cuaca",
+            description: "Sebuah aplikasi cuaca lintas platform (Android) yang dibangun sepenuhnya dengan Flutter. Aplikasi ini menyediakan data cuaca akurat secara real-time, prakiraan per jam, dan visualisasi data melalui peta cuaca interaktif. Proyek ini menunjukkan kemampuan dalam integrasi API pihak ketiga (BMKG), manajemen state, dan pembuatan antarmuka pengguna yang bersih dan fungsional.",
+            mediaType: "image",
+            mediaUrl: "/assets/porto/porto11.png",
+            projectUrl: "https://drive.google.com/file/d/12e0OHIpbakX13-Bh2V7SlHr-AZb0UDeP/view?usp=sharing",
+            technologies: ["Flutter", "Dart", "REST API", "OpenWeatherMap API", "JSON", "Geolocation (GPS)", "flutter_map", "State Management", "Android", "iOS"],
+        },
+        {
+            id: 2,
             title: "Jackduls",
             description: "Jackduls adalah website untuk brand clothing pribadi saya, yang dibuat untuk menampilkan identitas merek, koleksi produk, dan karya desain. Selain sebagai showcase, situs ini juga menjadi sarana membangun kehadiran online Jackduls dengan tampilan modern dan performa cepat menggunakan Next.js.",
             mediaType: "video",
             mediaUrl: "/assets/porto/porto1.mp4",
             projectUrl: "https://jackduls-roan.vercel.app/",
-            technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "React Bits"],
-        },
-        {
-            id: 2,
-            title: "Riniko Pempek",
-            description: "Website ini dikembangkan untuk mendukung UMKM kuliner Riniko Pempek dalam memperluas jangkauan pemasaran secara digital. Fitur yang dihadirkan meliputi banner interaktif dengan efek parallax, menu produk yang terintegrasi dengan tombol pemesanan cepat, serta tampilan responsif yang dioptimalkan untuk perangkat mobile.",
-            mediaType: "image",
-            mediaUrl: "/assets/porto/porto10.jpeg",
-            projectUrl: "https://riniko-pempek.vercel.app",
             technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "React Bits"],
         },
         {
