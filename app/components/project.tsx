@@ -32,6 +32,15 @@ const projects: Project[] = [
         category: "Mobile",
     },
     {
+        title: "Alikasi Innoverse Mobile by JTV Hub",
+        description: "...",
+        mediaType: "image",
+        mediaUrl: "/assets/porto/porto12.png",
+        link: "https://frontend-test-zakypriambada.vercel.app/ideas",
+        technologies: ["Flutter", "Dart", "REST API", "OpenWeatherMap API", "JSON", "Geolocation (GPS)", "State Management", "Android", "iOS"],
+        category: "Web Development",
+    },
+    {
         title: "Front-End Test API",
         description: "Proyek ini adalah test untuk magang di Suitmedia bagian front-end, yang menguji integrasi API, penambahan efek paralaks pada banner, serta penyinkronan show per page dengan postcard yang menggunakan lazy loading. Navbar diatur sesuai ketentuan dan tampilan responsif dioptimalkan untuk perangkat mobile. Jika gambar URL tidak terdeteksi, gambar cadangan dari aset akan ditampilkan.",
         mediaType: "image",
