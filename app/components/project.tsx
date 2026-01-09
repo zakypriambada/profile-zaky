@@ -38,7 +38,7 @@ const projects: Project[] = [
         mediaUrl: "/assets/porto/porto12.png",
         link: "https://frontend-test-zakypriambada.vercel.app/ideas",
         technologies: ["Flutter", "Dart", "REST API", "OpenWeatherMap API", "JSON", "Geolocation (GPS)", "State Management", "Android", "iOS"],
-        category: "Web Development",
+        category: "Mobile",
     },
     {
         title: "Front-End Test API",
