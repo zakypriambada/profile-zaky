@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mt-6">
                     <div className="pb-[20px]">
-                        <Link href="/assets/CV ATS MUHAMAD ZAKY P A.pdf">
+                        <Link href="assets/skills/CV ATS TERBARU V2.pdf">
                             <StarBorder
                                 as="button"
                                 className="px-4 py-2 rounded-full cursor-pointer mr-[20px]"
