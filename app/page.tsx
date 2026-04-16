@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import Navbar from "@/app/components/navbar";
 import Footer from "./components/footer";
 import Carousel from "./components/carousel";
