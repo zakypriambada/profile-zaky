@@ -11,6 +11,13 @@ interface Certificate {
 
 const certificates: Certificate[] = [
     {
+        title: "Sertifikat Internship di PT. Jawa Pos Media Televisi (JTV) ",
+        description: "Telah menyelesaikan program Magang Kerja di PT. Jawapos Media Televisi (JTV) sebagai Mobile dan Web Developer. Berkontribusi dalam pengembangan ekosistem digital 'JTV Hub' menggunakan framework Flutter, yang mencakup integrasi API multimedia, digitalisasi sistem pendaftaran kompetisi, dan penerapan praktik terbaik dalam pengembangan aplikasi mobile skala industri",
+        mediaType: "image",
+        mediaUrl: "/assets/sertif/Sertifikat_Magang_JTV.jpg",
+        technologies: ["Participants"],
+    },
+    {
         title: "Flutter In Production",
         description: "Mengikuti kegiatan Flutter In Production sebagai Participant, yang membahas penerapan Flutter dalam pengembangan aplikasi siap produksi serta praktik terbaik dalam industri pengembangan perangkat lunak.",
         mediaType: "image",
