@@ -33,7 +33,7 @@ const projects: Project[] = [
     },
     {
         title: "Alikasi Innoverse Mobile by JTV Hub",
-        description: "...",
+        description: "Sebuah ekosistem digital terintegrasi milik PT. Jawa Pos Media Televisi (JTV) yang dibangun menggunakan framework Flutter. Aplikasi ini berfungsi sebagai pusat informasi dan manajemen kompetisi inovasi internal (Innoverse), mentransformasi proses manual menjadi sistem digital yang efisien dan tersinkronisasi secara real-time. Proyek ini menunjukkan kemampuan dalam membangun aplikasi enterprise yang menangani alur kerja kompleks, mulai dari pendaftaran peserta hingga distribusi informasi multimedia dalam satu platform terpusat.",
         mediaType: "image",
         mediaUrl: "/assets/porto/porto12.png",
         link: "https://frontend-test-zakypriambada.vercel.app/ideas",
